@@ -1,0 +1,68 @@
+@page "/Terceros/Modificar"
+@inject modificarTerceroUseCase Modifi
+@inject NavigationManager Navegador
+
+<h3>Modificar un Tercero, por favor ingrese los datos</h3>
+
+<form>
+    
+    <div>
+        <label for = "nom"><b>ID de Tercero</b></label>
+        <input name = "id" type = "number" @bind="persona.id" class="form-control" required>
+    </div>
+    <div>
+        <label for = "nom"><b>Nombre del Tercero</b></label>
+        <input name = "nom" type = "text" @bind="persona.nombre" class="form-control">
+    </div>
+    <div>
+        <label for = "ape"><b>Apellido del Tercero</b></label>
+        <input name= "ape" type = "text" @bind="persona.apellido" class="form-control">
+    </div>
+    <div>
+        <label for="dni"><b>DNI del Tercero</b></label>
+        <input name ="dni" type = required @bind="persona.dni" class="form-control">
+    </div>
+    <div>
+        <label for="aseguradora"><b>Nombre de la Aseguradora</b> (Opcional)</label>
+        <input name="aseguradora" @bind="persona.nombreAseguradora" class="form-control">
+    </div>
+    <div>
+        <label for="tel"><b>Telefono de Contacto</b> (Opcional)</label>
+        <input name="tel" @bind="persona.tel" class="form-control">
+    </div>
+    <div>
+        <label for="idsiniesP"><b>Siniestro en el que participo</b>(Opcional)</label>
+        <input name="idsiniesP" @bind="persona.siniestroid" class="form-control">
+    </div>
+
+<style>
+#agg{
+    border-color:black;
+}
+#val{
+    display: @valor;
+    padding: auto;
+}
+</style>
+</form>
+<button id="agg" class="btn btn-primary" @onclick="Modificador">Aceptar</button>
+<p id="val" >@variable</p>
+
+@code {
+
+    Tercero persona = new Tercero();
+    string valor ="none";
+    string variable = "";
+    void Modificador(){
+        try{
+            Modifi.Ejecutar(persona);
+            persona = new Tercero();
+            Navegador.NavigateTo("/ListadoTerceros");
+        }
+        catch{
+            variable = "Error: Datos Incorrectos";
+            valor ="inline-block";
+            StateHasChanged();
+        }
+    }
+}

@@ -1,0 +1,89 @@
+@page "/ListadoTitulares"
+@inject listarTitularUseCase ListarTitulares
+@inject NavigationManager Navegador
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>APELLIDO</th>
+            <th>DNI</th>
+            <th>DIRECCION</th>
+            <th>CORREO</th>
+            <th>TELEFONO</th>
+            <th>VEHICULOS</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cli in _lista)
+        {
+            <tr>
+                <td>@cli.id</td>
+                <td>@cli.nombre</td>
+                <td>@cli.apellido</td>
+                <td>@cli.dni</td>
+                <td>@cli.direccion</td>
+                <td>@cli.correo</td>
+                <td>@cli.tel</td>
+                <td><div id="accion"><button class="btn btn-primary" @onclick="()=>instancia(cli.id)"><span class="oi oi-list"></span></button></div></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<style>
+.th{
+    width: auto;
+}
+#agg{
+    border-color : black;
+}
+#elim{
+    background-color : red;
+    border-color:black;
+}
+#mod{
+    background-color: green;
+    border-color: black;
+}
+#accion{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+</style>
+<button id="agg" class="btn btn-primary" @onclick="NavegarA">Agregar</button>
+<button id = "elim" class="btn btn-primary" @onclick="NavegarE">Eliminar</button>
+<button id = "mod" class="btn btn-primary" @onclick="NavegarM">Modificar</button>
+<ContenedorVT @ref="listado"/>
+@code {
+
+    Titular persona = new Titular();
+    List<Titular> _lista = new List<Titular>();
+    [Parameter] public int Id {get;set;}
+    ContenedorVT listado = new ContenedorVT();
+
+    protected void instancia(int id){
+        this.Id = id;
+        listado.enlistarlos(Id);
+    }
+
+    protected override void OnInitialized()
+    {
+        _lista = ListarTitulares.Ejecutar();
+    }
+
+    void NavegarA(){
+        Navegador.NavigateTo("/Titulares/Agregar");
+    }
+
+    void NavegarE(){
+        Navegador.NavigateTo("/Titulares/Eliminar");
+    }
+
+    void NavegarM(){
+        Navegador.NavigateTo("/Titulares/Modificar");
+    }
+
+}
+

@@ -1,0 +1,65 @@
+@page "/Titulares/Modificar"
+@inject modificarTitularUseCase Modifi
+@inject NavigationManager Navegador 
+
+<h3>Modificar un Titular por DNI, por favor ingrese los datos</h3>
+
+<style>
+#error{
+    display : @visible;
+    margin-left : 10px;
+}
+</style>
+<form>
+    <div>
+        <label for = "nom"><b>Nombre del Titular</b></label>
+        <input name = "nom" type = required @bind="persona.nombre" class="form-control" >
+    </div>
+    <div>
+        <label for = "ape"><b>Apellido del Titular</b></label>
+        <input name= "ape" type = required @bind="persona.apellido" class="form-control">
+    </div>
+    <div>
+        <label for="dni"><b>DNI del Titular</b></label>
+        <input name ="dni" type = required @bind="persona.dni" class="form-control">
+    </div>
+    <div>
+        <label for="mail"><b>Email de Contacto</b> (Opcional)</label>
+        <input name="mail" @bind="persona.correo" class="form-control">
+    </div>
+    <div>
+        <label for="tel"><b>Telefono de Contacto</b> (Opcional)</label>
+        <input name="tel" @bind="persona.tel" class="form-control">
+    </div>
+    <div>
+        <label for="dir"><b>Direccion de Vivienda</b>(Opcional)</label>
+        <input name="dir" @bind="persona.direccion" class="form-control">
+    </div>
+</form>
+<button id="agg" class="btn btn-primary" @onclick="Modificador">Aceptar</button>
+<p id="error">@mensaje</p>
+
+@code {
+    Titular persona = new Titular();
+    string visible = "none";
+    string? mensaje;
+    void Modificador(){
+        try
+        {
+            Modifi.Ejecutar(persona);
+            persona = new Titular();
+            Navegador.NavigateTo("/ListadoTitulares");
+        }
+        catch (Exception e)
+        {
+            if(e.Message == "Campos vacios"){
+                mensaje = "Uno o mas campos vacios.";
+            }
+            else
+            {   mensaje = "Dni no existente en la Base de Datos.";
+            }
+            visible = "inline-block";
+            StateHasChanged();
+        }
+    }
+}

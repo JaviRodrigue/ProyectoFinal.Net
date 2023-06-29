@@ -1,0 +1,59 @@
+@page "/Vehiculos/Modificar"
+@inject modificarVehiculoUseCase Modifi
+@inject NavigationManager Navegador
+
+<h3>Modificar un Vehiculo, por favor ingrese los datos</h3>
+
+<form>
+    <div>
+        <label><b>ID de Vehiculo</b></label>
+        <input type = "number" @bind="vehiculo.id" class="form-control" requiered>
+    </div>
+    <div>
+        <label for = "dom"><b>Dominio</b>(Opcional)</label>
+        <input name = "dom" type = "text" @bind="vehiculo.dominio" class="form-control" required>
+    </div>
+    <div>
+        <label for = "mar"><b>Marca</b>(Opcional)</label>
+        <input name= "mar" type = "text" @bind="vehiculo.marca" class="form-control" required>
+    </div>
+    <div>
+        <label for="fab"><b>Fabricacion</b>(Opcional)</label>
+        <input name ="fab" type = "text" @bind="vehiculo.fabricacion" class="form-control" required>
+    </div>
+    <div>
+        <label for="tit"><b>ID de Titular</b> (Opcional)</label>
+        <input name="tit" type="number" @bind="vehiculo.titularId" class="form-control" required>
+    </div>
+</form>
+
+<style>
+#agg{
+    border-color:black;
+}
+#val{
+    display: @valor;
+    margin-left : 10px;
+}
+</style>
+    <button id="agg" class="btn btn-primary" @onclick="Modificador">Aceptar</button>
+    <p id="val" >@variable</p>
+
+@code {
+
+    string valor = "none";
+    string variable = "";
+    Vehiculo vehiculo = new Vehiculo();
+    void Modificador(){
+        try{
+            Modifi.Ejecutar(vehiculo);
+            vehiculo = new Vehiculo();
+            Navegador.NavigateTo("/ListadoVehiculos");
+        }
+        catch{
+            variable = "Error: Datos incorrectos, verifique que el Dominio o ID de Titular correspondan a uno dentro de la Base de Datos.";
+            valor = "inline-block";    
+            StateHasChanged();
+        }
+    }
+}

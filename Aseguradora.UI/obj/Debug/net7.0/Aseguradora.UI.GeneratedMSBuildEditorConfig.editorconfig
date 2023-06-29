@@ -1,0 +1,137 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Aseguradora.UI
+build_property.RootNamespace = Aseguradora.UI
+build_property.ProjectDir = c:\Users\Javier\Documents\facultad\li\2do Año\Primer Semestre\.Net\Trabajofinal\Aseguradora\Aseguradora.UI\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = c:\Users\Javier\Documents\facultad\li\2do Año\Primer Semestre\.Net\Trabajofinal\Aseguradora\Aseguradora.UI
+build_property._RazorSourceGeneratorDebug = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Polizas/Agregar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saXphc1xBZ3JlZ2FyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Polizas/Eliminar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saXphc1xFbGltaW5hci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Polizas/ListadoPolizas.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saXphc1xMaXN0YWRvUG9saXphcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Polizas/Modificar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saXphc1xNb2RpZmljYXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Siniestros/Agregar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luaWVzdHJvc1xBZ3JlZ2FyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Siniestros/Eliminar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luaWVzdHJvc1xFbGltaW5hci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Siniestros/ListadoSiniestros.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luaWVzdHJvc1xMaXN0YWRvU2luaWVzdHJvcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Siniestros/Modificar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luaWVzdHJvc1xNb2RpZmljYXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Terceros/Agregar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVyY2Vyb3NcQWdyZWdhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Terceros/Eliminar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVyY2Vyb3NcRWxpbWluYXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Terceros/ListadoTerceros.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVyY2Vyb3NcTGlzdGFkb1RlcmNlcm9zLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Terceros/Modificar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVyY2Vyb3NcTW9kaWZpY2FyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Titulares/Agregar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGl0dWxhcmVzXEFncmVnYXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Titulares/Eliminar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGl0dWxhcmVzXEVsaW1pbmFyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Titulares/ListadoTitulares.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGl0dWxhcmVzXExpc3RhZG9UaXR1bGFyZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Titulares/Modificar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGl0dWxhcmVzXE1vZGlmaWNhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Vehiculos/Agregar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVoaWN1bG9zXEFncmVnYXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Vehiculos/Eliminar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVoaWN1bG9zXEVsaW1pbmFyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Vehiculos/ListadoVehiculos.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVoaWN1bG9zXExpc3RhZG9WZWhpY3Vsb3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Vehiculos/Modificar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVoaWN1bG9zXE1vZGlmaWNhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-fyxo1zynx4
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Shared/ContenedorVT.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXENvbnRlbmVkb3JWVC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-vbt2f65iag
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Shared/DialogoConfirmacion.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXERpYWxvZ29Db25maXJtYWNpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-kzkkcmuwyw
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-g6x6s7l54y
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-7swmyw7ncn
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Javier/Documents/facultad/li/2do Año/Primer Semestre/.Net/Trabajofinal/Aseguradora/Aseguradora.UI/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

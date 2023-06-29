@@ -1,0 +1,51 @@
+@inject NavigationManager Navegator
+@inject listarTitularesConVehiculosUseCase listadoVT
+@if (visible)
+{
+ <div class="dialogo-contenedor">
+    <div class="contenido">
+        <h4><center>@Mensaje</center></h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>DOMINIO</th>
+                    <th>MARCA</th>
+                    <th>FABRICACION</th>
+                    <th>TITULARID</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var cli in _lista)
+                {
+                    <tr>
+                        <td>@cli.id</td>
+                        <td>@cli.dominio</td>
+                        <td>@cli.marca</td>
+                        <td>@cli.fabricacion</td>
+                        <td>@cli.titularId</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="contenedor-boton">
+            <button class="btn btn-primary" @onclick="ocultar">Cerrar</button>
+        </div>
+    </div>
+ </div>
+
+}
+
+@code{
+    List<Vehiculo> _lista = new List<Vehiculo>();
+    bool visible = false;
+    string Mensaje = "Listado de Vehiculos";
+    public void enlistarlos(int id){
+        _lista = listadoVT.Ejecutar(id);
+        visible = true;
+        StateHasChanged();
+    }
+    void ocultar(){
+        visible = false;
+    }
+}

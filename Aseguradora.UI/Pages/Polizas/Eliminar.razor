@@ -1,0 +1,37 @@
+@page "/Polizas/Eliminar"
+@inject eliminarPolizaUseCase Eliminacion
+@inject NavigationManager Navegador
+
+<h3>Para eliminar una Poliza, Ingrese su ID</h3>
+<form>
+    <input type = "number" @bind = "id" class = "form-control" required>
+</form>
+
+<style>
+#elim{
+    background-color : red;
+    border-color:black;
+}
+#mens{
+    display : @visible;
+    margin-left : 10px;
+}
+</style>
+<button id="elim" class="btn btn-primary" @onclick="Eliminador">Eliminar</button>
+
+<p id="mens">Error, ID no encontrada en la Base de Datos.</p>
+
+@code {
+    string visible = "none";
+    int id;
+    void Eliminador(){
+        try{
+            Eliminacion.Ejecutar(id);
+            Navegador.NavigateTo("/ListadoPolizas");
+        }
+        catch{
+            visible = "inline-block";
+            StateHasChanged();
+        }
+    }
+}

@@ -1,0 +1,38 @@
+@page "/Siniestros/Eliminar"
+@inject eliminarSiniestroUseCase Eliminacion
+@inject NavigationManager Navegador
+
+<h3>Para eliminar un Siniestro, ingrese la ID</h3>
+<form>
+    <input type ="number" @bind = "id" class = "form-control">
+</form>
+
+<style>
+#elim{
+    background-color : red;
+    border-color:black;
+}
+#mens{
+    display : @visible;
+    margin-left: 10px;
+}
+</style>
+
+<button id="elim" class="btn btn-primary" @onclick="Eliminador">Eliminar</button>
+<p id="mens">Error, ID de Siniestro no encontrado en la Base de Datos.</p>
+
+
+@code {
+    string visible ="none";
+    int id;
+    void Eliminador(){
+        try{
+            Eliminacion.Ejecutar(id);
+            Navegador.NavigateTo("/ListadoSiniestros");
+        }
+        catch{
+            visible="inline-block";
+            StateHasChanged();
+        }
+    }
+}

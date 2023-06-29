@@ -1,0 +1,44 @@
+@page "/Titulares/Eliminar"
+@inject eliminarTitularUseCase Eliminacion
+@inject NavigationManager Navegador
+
+<h3>Para eliminar un Titular, Ingrese su ID</h3>
+<form>
+    <input type =number @bind = "DNI" class = "form-control" required>
+</form>
+
+<style>
+#elim{
+    background-color : red;
+    border-color:black;
+}
+#mens{
+    display : @visible;
+    margin-left : 10px;
+}
+</style>
+
+<button id="elim" class="btn btn-primary" @onclick="Eliminador">Eliminar</button>
+<p id="mens">@msj</p>
+
+@code {
+    string visible ="none";
+    int DNI;
+    string? msj;
+    void Eliminador(){
+        try{
+            Eliminacion.Ejecutar(DNI);
+            Navegador.NavigateTo("/ListadoTitulares");
+        }
+        catch(Exception e){
+            if(e.Message == "El ID no puede ser 0"){
+                msj="El ID no puede ser 0";
+            }
+            else{
+                msj="Error, ID de Titular no encontrado en la Base de Datos.";
+            }
+            visible="inline-block";
+            StateHasChanged();
+        }
+    }
+}

@@ -1,0 +1,65 @@
+@page "/Vehiculos/Agregar"
+@inject listarVehiculoUseCase ListarVehiculos
+@inject agregarVehiculoUseCase AgregarVehiculoUseCase
+@inject NavigationManager Navegador
+
+<h3>Complete con sus datos para agregar un Nuevo Vehiculo</h3>
+<form>
+    <div>
+        <label for = "dom"><b>Dominio</b></label>
+        <input name = "dom" type = required @bind="vehiculo.dominio" class="form-control">
+    </div>
+    <div>
+        <label for = "mar"><b>Marca</b></label>
+        <input name= "mar" type = required @bind="vehiculo.marca" class="form-control">
+    </div>
+    <div>
+        <label for="fab"><b>Fabricacion</b>(Opcional)</label>
+        <input name ="fab" type = required @bind="vehiculo.fabricacion" class="form-control">
+    </div>
+    <div>
+        <label for="tit"><b>ID de Titular</b></label>
+        <input name="tit" @bind="vehiculo.titularId" class="form-control">
+    </div>
+</form>
+<button id="agg" class="btn btn-primary" @onclick="Aceptar">Aceptar</button>
+
+<style>
+#agg{
+    border-color:black;
+}
+#val{
+    display : @valor;
+    margin-left: 10px;
+}
+
+</style>
+<p id="val">@variable</p>
+<DialogoConfirmacion @ref=dialogo Mensaje="Error, el Dominio ya esta registrado en la Base de Datos.¿Desea Modificar los Datos del mismo?"/>
+
+@code {
+    Vehiculo vehiculo = new Vehiculo();
+    string valor = "none";
+    string? variable ;
+    DialogoConfirmacion dialogo = null!;
+
+    void Aceptar(){
+        try{
+            AgregarVehiculoUseCase.Ejecutar(vehiculo);
+            vehiculo = new Vehiculo();
+            Navegador.NavigateTo("/ListadoVehiculos");
+        }
+        catch(Exception e){
+            if(e.Message == "1")
+            {
+                variable = "Error. ID de Titular no registrado";
+                valor = "inline-block";
+                StateHasChanged();
+            }
+            else{
+                dialogo.Mostrar("/Vehiculos/Modificar");
+            }
+        }
+    }
+
+}

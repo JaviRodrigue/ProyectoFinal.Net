@@ -1,0 +1,77 @@
+@page "/Siniestros/Agregar"
+@inject agregarSiniestroUseCase AgregarSiniestroUseCase
+@inject NavigationManager Navegator
+
+<h3>Complete los Espacios para agregar una nuevo Siniestro</h3>
+<style>
+#agg{
+    border-color:black;
+}
+#error{
+    display : @visible;
+    margin-left : 10px;
+}
+#f{
+    display: block;
+    margin-bottom: 1%;
+}
+#fecha{
+    margin-bottom:1%;
+    width: 15%;
+}
+</style>
+<form>
+    <div>
+        <label><b>Fecha de Ingreso</b></label>
+        <input id ="fecha" type = "date" @bind="siniestro.FechaIngreso" min="1990-01-01" max="2025-01-01" class="form-control" required>
+    </div>
+    <div>
+        <label id = "f"><b>Fecha de Ocurrencia</b></label>
+        <input type="date" id="fecha" name="trip-start" class="form-control" @bind ="siniestro.FechaOcurrencia" min="1990-01-01" max="2025-01-01">
+    </div>
+    <div>
+        <label><b>ID de Poliza</b></label>
+        <input type ="number" @bind="siniestro.polizaid" class="form-control">
+    </div>
+    <div>
+        <label><b>Direccion de Hecho</b></label>
+        <input type="text" @bind="siniestro.DireccionHecho" class="form-control">
+    </div>
+    <div>
+        <label><b>Descripcion del Accidente</b></label>
+        <input type="text" @bind="siniestro.DescAccidente" class="form-control">
+    </div>
+</form>
+<button id="agg" class="btn btn-primary" @onclick="Aceptar">Aceptar</button>
+<p id="error">@mensaje</p>
+<DialogoConfirmacion @ref=dialogo Mensaje="El Siniestro ya fue registrado en la Base de Datos, ¿Desea Modificarlo?"/>
+
+@code{
+
+    Siniestro siniestro = new Siniestro();
+    string visible = "none";
+    DialogoConfirmacion dialogo = new DialogoConfirmacion();
+    string? mensaje;
+    void Aceptar(){
+        try{
+            AgregarSiniestroUseCase.Ejecutar(siniestro);
+            siniestro = new Siniestro();
+            Navegator.NavigateTo("/ListadoSiniestros");
+        }
+        catch(Exception e){
+            if(e.Message == "siniestroigual"){
+                dialogo.Mostrar("/Siniestros/Modificar");
+            }
+            else{
+                if(e.Message == "polizavencida"){
+                    mensaje = "Error, Fecha de Poliza Vencida.";
+                }
+                else{
+                    mensaje="Error, ID de Poliza no encontrada en la Base de Datos.";
+                }
+                visible = "inline-block";
+                StateHasChanged();
+            }
+        }
+    }
+}

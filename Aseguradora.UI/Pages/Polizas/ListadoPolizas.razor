@@ -1,0 +1,69 @@
+@page "/ListadoPolizas"
+@inject listarPolizaUseCase ListarPolizas
+@inject NavigationManager Navegador
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ID VEHICULO</th>
+            <th>VALOR DE ASEGURADO</th>
+            <th>INICIO DE VIGENCIA</th>
+            <th>FIN DE VIGENCIA</th>
+            <th>FRANQUICIA</th>
+            <th>COBERTURA</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pol in _lista)
+        {
+            <tr>
+                <td>@pol.id</td>
+                <td>@pol.vehiculoid</td>
+                <td>@pol.valorAsegurado</td>
+                <td>@pol.inicioVigencia</td>
+                <td>@pol.finVigencia</td>
+                <td>@pol.franquicia</td>
+                <td>@pol.cobertura</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+#agg{
+    border-color :black;
+}
+#eli{
+    background-color:red;
+    border-color: black;
+}
+#mod{
+    background-color: green;
+    border-color:black;
+}
+</style>
+
+<button id="agg" class="btn btn-primary" @onclick="NavegarA">Agregar</button>
+<button id="eli" class="btn btn-primary" @onclick="NavegarE">Eliminar</button>
+<button id="mod" class="btn btn-primary" @onclick="NavegarM">Modificar</button>
+
+@code {
+    List<Poliza> _lista = new List<Poliza>();
+    protected override void OnInitialized()
+    {
+        _lista = ListarPolizas.Ejecutar();
+    }
+
+    void NavegarA(){
+        Navegador.NavigateTo("/Polizas/Agregar");
+    }
+
+    void NavegarE(){
+        Navegador.NavigateTo("/Polizas/Eliminar");
+    }
+
+    void NavegarM(){
+        Navegador.NavigateTo("/Polizas/Modificar");
+    }
+}

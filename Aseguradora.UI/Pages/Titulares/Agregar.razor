@@ -1,0 +1,63 @@
+@page "/Titulares/Agregar"
+@inject agregarTitularUseCase AgregarTitularUseCase
+@inject NavigationManager Navegador
+
+<h3>Complete con sus datos para agregar un Nuevo Titular</h3>
+<style>
+#error{
+    display : @visible;
+    margin-left : 10px;
+}
+</style>
+<form>
+    <div>
+        <label for = "nom"><b>Nombre del Titular</b></label>
+        <input name = "nom" @bind="persona.nombre" class="form-control" required>
+    </div>
+    <div>
+        <label for = "ape"><b>Apellido del Titular</b></label>
+        <input name= "ape" @bind="persona.apellido" class="form-control" required>
+    </div>
+    <div>
+        <label for="DNI"><b>DNI del Titular</b></label>
+        <input type ="number" @bind="persona.dni" min="1"class="form-control" required>
+    </div>
+    <div>
+        <label for="mail"><b>Email de Contacto</b> (Opcional)</label>
+        <input name="mail" @bind="persona.correo" class="form-control">
+    </div>
+    <div>
+        <label for="tel"><b>Telefono de Contacto</b> (Opcional)</label>
+        <input type = "number" @bind="persona.tel" class="form-control">
+    </div>
+    <div>
+        <label for="dir"><b>Direccion de Vivienda</b>(Opcional)</label>
+        <input name="dir" @bind="persona.direccion" class="form-control">
+    </div>   
+</form>
+<button id="agg" class="btn btn-primary" @onclick="Aceptar">Aceptar</button>
+<p id="error">@mensaje</p>
+<DialogoConfirmacion @ref=dialogo Mensaje="Error, DNI ya registrado en la Base de Datos, ¿Desea Modificar los datos Referentes a ese DNI?"/>
+@code {
+    Titular persona = new Titular();
+    string visible = "none";
+    DialogoConfirmacion dialogo = new DialogoConfirmacion();
+    string? mensaje;
+    void Aceptar(){
+        try{
+            AgregarTitularUseCase.Ejecutar(persona);
+            persona = new Titular();
+            Navegador.NavigateTo("/ListadoTitulares");
+        }
+        catch(Exception e){
+            if(e.Message == "Campos vacios"){
+                mensaje = "Uno o mas campos obligatorios vacios.";
+                visible = "inline-block";
+                StateHasChanged();
+            }
+            else{
+                dialogo.Mostrar("/Titulares/Modificar");
+            }
+        }
+    }
+}

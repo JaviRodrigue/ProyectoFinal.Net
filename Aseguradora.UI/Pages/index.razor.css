@@ -1,0 +1,21 @@
+.contenedorTitulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedorSubtitulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedorDescripcion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.descripcion2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}

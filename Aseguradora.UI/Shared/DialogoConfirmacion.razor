@@ -1,0 +1,32 @@
+@inject NavigationManager Navegator
+@if (visible)
+{
+ <div class="dialogo-contenedor">
+    <div class="dialogo-contenido">
+        <h3>@Mensaje</h3>
+        <button class="btn btn-primary" @onclick="Modificacion">Modificar</button>
+        <button class="btn btn-secondary" @onclick="Cerrar">Cancelar</button>
+    </div>
+ </div>
+}
+
+@code{
+    private bool visible = false;
+    [Parameter]
+    public string Mensaje {get;set;}="";
+    string? dir;
+    public void Mostrar(string direccion)
+    {
+        dir = direccion;
+        visible=true;
+        StateHasChanged();
+    }
+
+    void Modificacion(){
+        Navegator.NavigateTo($"{dir}");
+    }
+    void Cerrar()
+    {
+        visible=false;
+    }
+}

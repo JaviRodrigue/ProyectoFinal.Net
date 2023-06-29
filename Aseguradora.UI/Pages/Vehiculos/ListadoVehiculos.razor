@@ -1,0 +1,66 @@
+@page "/ListadoVehiculos"
+@inject listarVehiculoUseCase ListarVehiculos
+@inject NavigationManager Navegador
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>DOMINIO</th>
+            <th>MARCA</th>
+            <th>FABRICACION</th>
+            <th>TITULARID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cli in _lista)
+        {
+            <tr>
+                <td>@cli.id</td>
+                <td>@cli.dominio</td>
+                <td>@cli.marca</td>
+                <td>@cli.fabricacion</td>
+                <td>@cli.titularId</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<style>
+#agg{
+    border-color : black;
+}
+#elim{
+    background-color : red;
+    border-color:black;
+}
+#mod{
+    background-color: green;
+    border-color: black;
+}
+</style>
+<button id="agg" class="btn btn-primary" @onclick="NavegarA">Agregar</button>
+<button id = "elim" class="btn btn-primary" @onclick="NavegarE">Eliminar</button>
+<button id = "mod" class="btn btn-primary" @onclick="NavegarM">Modificar</button>
+
+@code {
+
+    Vehiculo vehiculo = new Vehiculo();
+    List<Vehiculo> _lista = new List<Vehiculo>();
+    protected override void OnInitialized()
+    {
+        _lista = ListarVehiculos.Ejecutar();
+    }
+
+    void NavegarA(){
+        Navegador.NavigateTo("/Vehiculos/Agregar");
+    }
+
+    void NavegarE(){
+        Navegador.NavigateTo("/Vehiculos/Eliminar");
+    }
+
+    void NavegarM(){
+        Navegador.NavigateTo("/Vehiculos/Modificar");
+    }
+
+}

@@ -1,0 +1,39 @@
+@page "/Terceros/Eliminar"
+@inject eliminarTerceroUseCase Eliminacion
+@inject NavigationManager Navegador
+
+<h3>Para eliminar un Tercero, Ingrese su ID</h3>
+<form>
+    <input type = required @bind = "id" class = "form-control">
+</form>
+
+<style>
+#elim{
+    background-color : red;
+    border-color:black;
+}
+#mens{
+    display: @visible;
+}
+</style>
+
+<button id="elim" class="btn btn-primary" @onclick="Eliminador">Eliminar</button>
+<p id="mens">Error, ID de vehiculo no se encuentra en la Base de Datos</p>
+
+@code {
+    int id;
+    string visible = "none";
+    void Eliminador(){
+        try
+        {
+            Eliminacion.Ejecutar(id);
+            Navegador.NavigateTo("/ListadoTerceros");
+        }
+        catch
+        {
+            visible = "inline-block";
+            StateHasChanged();
+        }
+    }
+
+}

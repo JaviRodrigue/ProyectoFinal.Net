@@ -1,0 +1,80 @@
+@page "/Polizas/Agregar"
+@inject agregarPolizaUseCase AgregarPolizaUseCase
+@inject NavigationManager Navegator
+
+<h3>Complete los Espacios para agregar una nueva Poliza</h3>
+<form>
+    <div>
+        <label><b>ID del Vehiculo Asegurado</b></label>
+        <input type = "number" @bind="poliza.vehiculoid" class="form-control" required>
+    </div>
+    <div>
+        <label><b>Valor Asegurado</b></label>
+        <input type = "number" @bind="poliza.valorAsegurado" class="form-control" required>
+    </div>
+    <div>
+        <label><b>Fecha de Inicio de Vigencia</b></label>
+        <input id="fecha" type = "date" @bind="poliza.inicioVigencia" min="1990-01-01" max="2025-01-01" class="form-control" required>
+    </div>
+    <div>
+        <label><b>Fecha de Fin de Vigencia</b></label>
+        <input id="fecha" type = "date" @bind="poliza.finVigencia" min="1990-01-01" max="2025-01-01" class="form-control" required>
+    </div>
+    <div>
+        <label><b>Franquicia</b></label>
+        <input type = "number" @bind="poliza.franquicia" class="form-control" required>
+    </div>
+    <div>
+        <label><b>Tipo de Cobertura</b></label>
+        <select class="form-control" @bind="poliza.cobertura" required>
+            <option value=""selected>----Elija una Opcion----</option>
+            <option value="Civil">Civil</option>
+            <option value="Todo Riesgo">Todo Riesgo</option>
+        </select>
+    </div>
+</form>
+<button id="agg" type="submit" class="btn btn-primary" @onclick="Aceptar">Aceptar</button>
+<style>
+.input{
+    margin-bottom: 1%;
+}
+#agg{
+    border-color:black;
+}
+#val{
+    display : @valor;
+    margin-left: 10px;
+}
+#fecha{
+    width: 15%;
+}
+</style>
+
+<p id="val">@variable</p>
+
+<DialogoConfirmacion @ref=dialogo Mensaje="Error, ID de Vehiculo en Poliza, ya registrado en la Base de Datos.¿Desea Modificar los Datos?"/>
+
+@code{
+
+    Poliza poliza = new Poliza();
+    string valor = "none";
+    string? variable;
+    DialogoConfirmacion dialogo = null!;
+    void Aceptar(){
+        try{
+            AgregarPolizaUseCase.Ejecutar(poliza);
+            poliza = new Poliza();
+            Navegator.NavigateTo("/ListadoPolizas");
+        }
+        catch(Exception e){
+            if(e.Message == "IDnoexiste"){
+                variable = "Error, ID de Vehiculo no registrada en la base de datos.";
+                valor = "inline-block";
+                StateHasChanged();
+            }
+            else{
+                dialogo.Mostrar("/Polizas/Modificar");
+            }
+        }
+    }
+}

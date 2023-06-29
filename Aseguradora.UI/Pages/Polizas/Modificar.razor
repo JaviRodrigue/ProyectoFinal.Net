@@ -1,0 +1,77 @@
+@page "/Polizas/Modificar"
+@inject modificarPolizaUseCase Modifi
+@inject NavigationManager Navegador
+
+<h3>Para modificar una Poliza, por favor ingrese los datos</h3>
+<form>
+    <div>
+        <label><b>ID de la Poliza</b></label>
+        <input type ="number" @bind="poliza.id" class="form-control" required>
+    </div>
+    <div>
+        <label><b>ID del Vehiculo Asegurado</b></label>
+        <input type ="number" @bind="poliza.vehiculoid" class="form-control" required>
+    </div>
+    <div>
+        <label><b>Valor Asegurado</b></label>
+        <input type ="number" @bind="poliza.valorAsegurado" class="form-control" required>
+    </div>
+    <div>
+        <label><b>Fecha de Inicio de Vigencia</b></label>
+        <input id="fecha" type="date" @bind="poliza.inicioVigencia" min="1990-01-01" max="2025-01-01" class="form-control" required>
+    </div>
+    <div>
+        <label><b>Fecha de Fin de Vigencia</b></label>
+        <input id="fecha" type="date" @bind="poliza.finVigencia" min="1990-01-01" max="2025-01-01" class="form-control" required>
+    </div>
+    <div>
+        <label><b>Franquicia</b></label>
+        <input @bind="poliza.franquicia" class="form-control" required>
+    </div>
+    <div>
+        <label><b>Tipo de Cobertura</b></label>
+        <select class="form-control" @bind="poliza.cobertura" required>
+            <option value=""selected>----Elija una Opcion----</option>
+            <option value="Civil">Civil</option>
+            <option value="Todo Riesgo">Todo Riesgo</option>
+        </select>
+    </div>
+</form>
+<style>
+#fecha{
+    width: 15%;
+}
+#agg{
+    border-color:black;
+}
+#mens{
+    display : @visible;
+    margin-left : 10px;
+}
+</style>
+<button id="agg" class="btn btn-primary" @onclick="Modificador">Aceptar</button>
+<p id = "mens">@mensaje</p>
+
+@code {
+    Poliza poliza = new Poliza();
+    string visible = "none";
+    string? mensaje;
+    void Modificador(){
+        try{
+            Modifi.Ejecutar(poliza);
+            poliza = new Poliza();
+            Navegador.NavigateTo("/ListadoPolizas");
+        }
+        catch(Exception e){
+            if(e.Message == "idvehiculonoencontrado"){
+                mensaje = "Error, ID de Vehiculo no encontrado en la Base de Datos";
+            }
+            else{
+                mensaje = "Error, ID de Poliza no encontrada en la Base de Datos";
+            }
+            visible = "inline-block";
+            StateHasChanged();
+        }
+    }
+}
+

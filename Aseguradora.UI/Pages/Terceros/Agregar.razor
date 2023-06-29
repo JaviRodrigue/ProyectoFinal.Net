@@ -1,0 +1,75 @@
+@page "/Terceros/Agregar"
+@inject agregarTerceroUseCase AgregarTerceroUseCase
+@inject NavigationManager Navegador
+
+<h3>Complete con sus datos para agregar un Nuevo Tercero</h3>
+<form>
+    <div>
+        <label for = "nom"><b>Nombre del Tercero</b></label>
+        <input name = "nom" type = "text" @bind="persona.nombre" class="form-control" required>
+    </div>
+    <div>
+        <label for = "ape"><b>Apellido del Tercero</b></label>
+        <input name= "ape" type = "text" @bind="persona.apellido" class="form-control" required>
+    </div>
+    <div>
+        <label for="dni"><b>DNI del Tercero</b></label>
+        <input name ="dni" type = "number" @bind="persona.dni" class="form-control" required>
+    </div>
+    <div>
+        <label for="aseguradora"><b>Nombre de Aseguradora</b> (Opcional)</label>
+        <input name="aseguradora" @bind="persona.nombreAseguradora" class="form-control" type="text">
+    </div>
+    <div>
+        <label for="tel"><b>Telefono de Contacto</b> (Opcional)</label>
+        <input name="tel" @bind="persona.tel" class="form-control" type="number">
+    </div>
+    <div>
+        <label for="idsiniesP"><b>ID Siniestro en el q participo</b>(Opcional)</label>
+        <input name="idsiniesP" @bind="persona.siniestroid" class="form-control" type="number" required>
+    </div>
+</form>
+<button id="agg" class="btn btn-primary" @onclick="Aceptar">Aceptar</button>
+<style>
+.input{
+    margin-bottom: 1%;
+}
+#agg{
+    border-color:black;
+    margin-left: 10px;
+}
+#val{
+    display : @valor;
+    margin-left:10px;
+}
+</style>
+<p id="val">@variable</p>
+
+<DialogoConfirmacion @ref=dialogo Mensaje="Error, DNI de Tercero, ya registrado en la Base de Datos.¿Desea Modificar los Datos?"/>
+@code {
+    Tercero persona = new Tercero();
+    string valor = "none";
+    string variable = "";
+    DialogoConfirmacion dialogo = null!;
+    void Aceptar(){
+        try{
+            AgregarTerceroUseCase.Ejecutar(persona);
+            persona = new Tercero();
+            Navegador.NavigateTo("/ListadoTerceros");
+        }
+        catch(Exception e)
+        {
+            if(e.Message == "ErrorAgregarTercero1")
+            {
+                variable = "Error: ID de Siniestro no registrado en la Base de Datos";
+                valor="inline-block";
+                StateHasChanged();
+            }
+            else
+            {
+                valor = "inline-block";
+                dialogo.Mostrar("/Terceros/Modificar");
+            }
+        }
+    }
+}
