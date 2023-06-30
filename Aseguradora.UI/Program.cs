@@ -16,6 +16,7 @@ builder.Services.AddSingleton<WeatherForecastService>();
 
 builder.Services.AddTransient<agregarTitularUseCase>();
 builder.Services.AddTransient<eliminarTitularUseCase>();
+builder.Services.AddTransient<obtenerTitularUseCase>();
 builder.Services.AddTransient<modificarTitularUseCase>();
 builder.Services.AddTransient<listarTitularUseCase>();
 builder.Services.AddTransient<listarTitularesConVehiculosUseCase>();

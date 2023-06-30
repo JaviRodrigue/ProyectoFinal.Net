@@ -1179,11 +1179,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.UI\\Aseguradora.UI.csproj",
+      "projectUniqueName": "C:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.UI\\Aseguradora.UI.csproj",
       "projectName": "Aseguradora.UI",
-      "projectPath": "c:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.UI\\Aseguradora.UI.csproj",
+      "projectPath": "C:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.UI\\Aseguradora.UI.csproj",
       "packagesPath": "C:\\Users\\Javier\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.UI\\obj\\",
+      "outputPath": "C:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.UI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Javier\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -1198,11 +1198,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "c:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.Aplicacion\\Aseguradora.Aplicacion.csproj": {
-              "projectPath": "c:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.Aplicacion\\Aseguradora.Aplicacion.csproj"
+            "C:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.Aplicacion\\Aseguradora.Aplicacion.csproj": {
+              "projectPath": "C:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.Aplicacion\\Aseguradora.Aplicacion.csproj"
             },
-            "c:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.Repositorios\\Aseguradora.Repositorios.csproj": {
-              "projectPath": "c:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.Repositorios\\Aseguradora.Repositorios.csproj"
+            "C:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.Repositorios\\Aseguradora.Repositorios.csproj": {
+              "projectPath": "C:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.Repositorios\\Aseguradora.Repositorios.csproj"
             }
           }
         }

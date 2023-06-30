@@ -1,8 +1,9 @@
-@page "/Titulares/Modificar"
+@page "/Titulares/{id:int?}"
 @inject modificarTitularUseCase Modifi
+@inject obtenerTitularUseCase obtenerTitularUseCase
 @inject NavigationManager Navegador 
 
-<h3>Modificar un Titular por DNI, por favor ingrese los datos</h3>
+<h3>Modificar un Titular @persona.nombre, por favor ingrese los datos</h3>
 
 <style>
 #error{
@@ -18,10 +19,6 @@
     <div>
         <label for = "ape"><b>Apellido del Titular</b></label>
         <input name= "ape" type = required @bind="persona.apellido" class="form-control">
-    </div>
-    <div>
-        <label for="dni"><b>DNI del Titular</b></label>
-        <input name ="dni" type = required @bind="persona.dni" class="form-control">
     </div>
     <div>
         <label for="mail"><b>Email de Contacto</b> (Opcional)</label>
@@ -41,8 +38,21 @@
 
 @code {
     Titular persona = new Titular();
+    [Parameter] public int? id{get;set;}
     string visible = "none";
     string? mensaje;
+    protected override void OnParametersSet()
+    {
+        if(id != null)
+        {
+            var titu = obtenerTitularUseCase.Ejecutar(id.Value);
+            if(titu != null)
+            {
+                persona = titu;
+            }
+        }
+    }
+    
     void Modificador(){
         try
         {
@@ -63,3 +73,4 @@
         }
     }
 }
+

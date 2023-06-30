@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.Aplicacion\\Aseguradora.Aplicacion.csproj": {}
+    "C:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.Aplicacion\\Aseguradora.Aplicacion.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.Aplicacion\\Aseguradora.Aplicacion.csproj": {
+    "C:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.Aplicacion\\Aseguradora.Aplicacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.Aplicacion\\Aseguradora.Aplicacion.csproj",
+        "projectUniqueName": "C:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.Aplicacion\\Aseguradora.Aplicacion.csproj",
         "projectName": "Aseguradora.Aplicacion",
-        "projectPath": "c:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.Aplicacion\\Aseguradora.Aplicacion.csproj",
+        "projectPath": "C:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.Aplicacion\\Aseguradora.Aplicacion.csproj",
         "packagesPath": "C:\\Users\\Javier\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.Aplicacion\\obj\\",
+        "outputPath": "C:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.Aplicacion\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Javier\\AppData\\Roaming\\NuGet\\NuGet.Config"

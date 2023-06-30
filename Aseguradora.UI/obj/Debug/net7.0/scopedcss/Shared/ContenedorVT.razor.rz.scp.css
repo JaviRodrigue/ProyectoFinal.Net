@@ -1,0 +1,25 @@
+.dialogo-contenedor[b-vbt2f65iag] {
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom:0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido[b-vbt2f65iag]{
+    width: 80%;
+    height: 80%;
+    padding: 20px;
+    background-color: white;
+}
+.contenedor-boton[b-vbt2f65iag]{
+    display: flex;
+    justify-content:end;
+    align-items: end;
+    margin-right: 25px;
+}

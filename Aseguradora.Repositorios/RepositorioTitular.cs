@@ -83,5 +83,12 @@ public class RepositorioTitular : IRepositorioTitular
             return context.Titulares.ToList();
         }
     }
+    public Titular? obtenerTitular(int id)
+    {
+        using(var context = new AseguradoraContext())
+        {
+            return(context.Titulares?.FirstOrDefault(t=> t.id == id) ?? null);
+        }
+    }
 
 }

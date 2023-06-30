@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tomG6FhRqlr/bUPtGTbi7eB1lbMr8OUcr2+uTPVSVYczlqDyNhppTa8NV/q8p3H+g8uC/VOEilUmMlciynYWGw==",
+  "dgSpecHash": "hcr/4+nDzc6BtXbLJRchl2kViNgp09A98+9AZnr5d46XZONJBYoXK68NwrDybZ49zLhW6bG1dHDOi2K5L7GOcQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.Repositorios\\Aseguradora.Repositorios.csproj",
+  "projectFilePath": "C:\\Users\\Javier\\Documents\\facultad\\li\\2do Año\\Primer Semestre\\.Net\\Trabajofinal\\Aseguradora\\Aseguradora.Repositorios\\Aseguradora.Repositorios.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Javier\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.7\\microsoft.data.sqlite.core.7.0.7.nupkg.sha512",
     "C:\\Users\\Javier\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.7\\microsoft.entityframeworkcore.7.0.7.nupkg.sha512",

@@ -27,6 +27,13 @@
                 <td>@cli.correo</td>
                 <td>@cli.tel</td>
                 <td><div id="accion"><button class="btn btn-primary" @onclick="()=>instancia(cli.id)"><span class="oi oi-list"></span></button></div></td>
+                <td>
+                    <div id="modifi">
+                        <button class="btn btn-secondary"@onclick="()=> modificarTitular(cli)">
+                            <span class="oi oi-pencil"></span>
+                        </button>
+                    </div>
+                </td>
             </tr>
         }
     </tbody>
@@ -71,6 +78,10 @@
     protected override void OnInitialized()
     {
         _lista = ListarTitulares.Ejecutar();
+    }
+    void modificarTitular(Titular titu)
+    {
+        Navegador.NavigateTo($"/Titulares/{titu.id}");
     }
 
     void NavegarA(){
